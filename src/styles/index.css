@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  cursor: none;
+}
+
+@media (max-width: 768px), (hover: none) {
+  body {
+    cursor: auto;
+  }
+}
+
+::selection {
+  background: rgba(177, 76, 255, 0.35);
+  color: #fff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #05050b;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #4cf3ff, #b14cff);
+  border-radius: 8px;
+}
+
+@layer components {
+  .glass-card {
+    @apply relative rounded-2xl border border-white/10 bg-glass backdrop-blur-xl shadow-glass;
+  }
+
+  .neon-text {
+    background: linear-gradient(90deg, #4cf3ff, #b14cff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .eyebrow {
+    @apply font-mono text-xs tracking-[0.35em] uppercase text-cyan-neon/80;
+  }
+
+  .section-title {
+    @apply font-display text-4xl md:text-6xl font-semibold text-ink tracking-tight;
+  }
+
+  .btn-primary {
+    @apply relative inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-neon to-violet-neon px-7 py-3 font-mono text-sm font-medium text-void shadow-neon-cyan transition-transform duration-300 hover:scale-105 active:scale-95;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-7 py-3 font-mono text-sm text-ink transition-all duration-300 hover:border-cyan-neon/60 hover:shadow-neon-cyan;
+  }
+}
+
+/* Custom cursor */
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: #4cf3ff;
+  box-shadow: 0 0 10px #4cf3ff;
+}
+.cursor-ring {
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(177, 76, 255, 0.6);
+  transition: width 0.2s, height 0.2s, border-color 0.2s, background 0.2s;
+}
+.cursor-ring.active {
+  width: 54px;
+  height: 54px;
+  background: rgba(177, 76, 255, 0.08);
+  border-color: #4cf3ff;
+}
+
+/* Light mode overrides (bonus toggle) — flips base surfaces only */
+html.light body {
+  background-color: #F4F5FB;
+  color: #0A0A16;
+}
+html.light .glass-card {
+  background: rgba(10, 10, 22, 0.035);
+  border-color: rgba(10, 10, 22, 0.08);
+}
+html.light .text-ink {
+  color: #0A0A16;
+}
+html.light .text-ink\/70,
+html.light .text-ink-muted {
+  color: #4a4a5e;
+}
+
+.bg-grain::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: var(--noise, none);
+  pointer-events: none;
+  z-index: 40;
+}
