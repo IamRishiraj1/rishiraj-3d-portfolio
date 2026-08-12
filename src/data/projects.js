@@ -1,6 +1,7 @@
 // Edit this file to update project cards.
 // GitHub links intentionally aren't per-project — every card links to
 // the full repository list at https://github.com/IamRishiraj1?tab=repositories
+// Screenshots live in public/images/projects/
 
 export const projects = [
   {
@@ -10,6 +11,7 @@ export const projects = [
       'A real-time weather app with live conditions, forecasts and a clean, glanceable UI powered by a public weather API.',
     tags: ['React', 'API Integration', 'CSS'],
     live: 'https://weathershowcase.vercel.app',
+    image: '/images/projects/weather-showcase.png',
     featured: true,
   },
   {
@@ -19,6 +21,7 @@ export const projects = [
       'A data-dense weather & pressure dashboard, visualizing atmospheric metrics with interactive charts and live updates.',
     tags: ['React', 'Dashboard', 'Data Viz'],
     live: 'https://isobardashboard.netlify.app',
+    image: '/images/projects/isobar-dashboard.png',
     featured: true,
   },
   {
@@ -28,6 +31,7 @@ export const projects = [
       'A minimalist productivity & task-management app focused on speed — add, organize and complete tasks with zero friction.',
     tags: ['React', 'Productivity', 'LocalStorage'],
     live: 'https://do-ers.netlify.app',
+    image: '/images/projects/do-ers.png',
     featured: false,
   },
   {
@@ -37,6 +41,7 @@ export const projects = [
       'Search thousands of recipes by ingredient or cuisine, with a fast, responsive browsing experience.',
     tags: ['React', 'Recipe API', 'Search'],
     live: 'https://recipefindero.netlify.app',
+    image: '/images/projects/recipe-findero.png',
     featured: false,
   },
   {
@@ -46,6 +51,7 @@ export const projects = [
       'A live cryptocurrency tracker with real-time prices, market caps and trend indicators for top coins.',
     tags: ['React', 'Crypto API', 'Real-time Data'],
     live: 'https://pulse-crypto-tracker.netlify.app',
+    image: '/images/projects/pulse-crypto-tracker.png',
     featured: true,
   },
   {
@@ -55,6 +61,7 @@ export const projects = [
       'A streamlined crypto price tracker with sortable market data and a fast, distraction-free interface.',
     tags: ['React', 'Crypto API'],
     live: 'https://crypto-tracker-two-blond.vercel.app',
+    image: '/images/projects/crypto-tracker.png',
     featured: false,
   },
   {
@@ -64,6 +71,7 @@ export const projects = [
       'A snappy currency converter supporting live exchange rates across major global currencies.',
     tags: ['JavaScript', 'Exchange Rate API'],
     live: 'https://cc-currencyconverter.netlify.app',
+    image: '/images/projects/cc-currency-converter.png',
     featured: false,
   },
   {
@@ -73,6 +81,7 @@ export const projects = [
       'A lightweight tool for checking live currency values and conversions on the go.',
     tags: ['JavaScript', 'API Integration'],
     live: 'https://currencyvalueonline.netlify.app',
+    image: '/images/projects/currency-value-online.png',
     featured: false,
   },
   {
@@ -82,6 +91,7 @@ export const projects = [
       'A recipe discovery app with a playful UI — browse dishes, view ingredients and follow step-by-step instructions.',
     tags: ['React', 'UI/UX', 'Recipe API'],
     live: 'https://yumyum-recipe.netlify.app',
+    image: '/images/projects/yumyum-recipe.png',
     featured: false,
   },
   {
@@ -91,6 +101,7 @@ export const projects = [
       'A premium movie discovery platform — browse trending titles, view details and build a personal watchlist.',
     tags: ['React', 'Movie API', 'UI Design'],
     live: 'https://cine-vault-pro.vercel.app',
+    image: '/images/projects/cine-vault-pro.png',
     featured: true,
   },
 ];

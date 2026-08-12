@@ -45,12 +45,16 @@ function ProjectCard({ project }) {
       transition={{ type: 'spring', stiffness: 260, damping: 20 }}
       className="glass-card group flex h-full flex-col overflow-hidden"
     >
-      <div className="relative flex h-40 items-center justify-center overflow-hidden border-b border-white/10 bg-gradient-to-br from-violet-neon/15 via-void-soft to-cyan-neon/10">
-        <span className="font-display text-3xl font-semibold tracking-tight text-white/10 transition-all duration-500 group-hover:scale-110 group-hover:text-white/15">
-          {project.title}
-        </span>
+      <div className="relative h-44 overflow-hidden border-b border-white/10 bg-void-soft">
+        <img
+          src={project.image}
+          alt={`${project.title} screenshot`}
+          loading="lazy"
+          className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-void/70 via-transparent to-transparent" />
         {project.featured && (
-          <span className="absolute left-4 top-4 rounded-full border border-cyan-neon/40 bg-void/60 px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-cyan-neon">
+          <span className="absolute left-4 top-4 rounded-full border border-cyan-neon/40 bg-void/70 px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-cyan-neon backdrop-blur-sm">
             Featured
           </span>
         )}
