@@ -4,6 +4,17 @@
 // Screenshots live in public/images/projects/
 
 export const projects = [
+  
+   {
+    id: 'portfolio-v2',
+    title: 'Portfolio V2 — Editorial Style',
+    description:
+      'A second personal portfolio design — bold typography, black/white alternating sections and GSAP scroll animations, built with Next.js and TypeScript.',
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'GSAP'],
+    live: 'https://rishiraj-portfolio-v2.vercel.app',
+    image: '/images/projects/portfolio-v2.png',
+    featured: true,
+  },
   {
     id: 'weather-showcase',
     title: 'Weather Showcase',
