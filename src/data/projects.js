@@ -6,6 +6,17 @@
 export const projects = [
   
    {
+    id: 'GhariGhor-business',
+    title:'GhariGhor Business ready website with AI Store assistant',
+    description:
+      'Full-stack car dealership platform with a customer storefront, an admin dashboard, and an AI sales assistant that qualifies leads in real time — a genuinely production-ready system, not a demo.',
+    tags: ['React', 'Node.js',  'Express', 'Gemini', 'cloud image storage', 'authentication', 'automated backups' ],
+    live: 'https://garighor-motors.vercel.app',
+    image: '/images/projects/GHARIGHOR.png',
+    featured: true,
+   },
+
+   {
     id: 'portfolio-v2',
     title: 'Portfolio V2 — Editorial Style',
     description:
