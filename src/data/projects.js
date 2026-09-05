@@ -6,8 +6,8 @@
 export const projects = [
   
    {
-    id: 'GhariGhor-business',
-    title:'GhariGhor Business ready website with AI Store assistant',
+    id: 'Dineflow-Restuarant',
+    title:'DineFlow — Full-stack restaurant ordering platform',
     description:
     'DineFlow is a full-stack restaurant ordering and management platform built with Next.js, Prisma, Supabase, and NextAuth.js. It combines a customer storefront and an admin dashboard in one codebase, with real database-backed orders, authentication, payments, uploads, and analytics.',
     tags: ['Next.js 14 (App Router)', 'TypeScript','Tailwind CSS','lucide-react','Recharts','PostgreSQL on Supabase','Prisma','NextAuth.js (Credentials + JWT)','Supabase Storage','SSLCommerz','Resend','Zod'],
