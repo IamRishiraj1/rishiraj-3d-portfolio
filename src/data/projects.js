@@ -28,6 +28,26 @@ export const projects = [
    },
 
    {
+  id: 'Doers-AI-Task-Manager',
+  title: 'Do-ers — AI-Powered Task Manager',
+  description:
+    'An AI-powered productivity application that helps users organize tasks, generate intelligent task suggestions, and sync tasks with Todoist. Built with React and JavaScript, using Netlify serverless functions to securely communicate with external APIs while keeping sensitive credentials out of the client.',
+  tags: [
+    'React',
+    'JavaScript',
+    'AI Integration',
+    'Groq API',
+    'Todoist API',
+    'Netlify Functions',
+    'REST APIs',
+    'Serverless Architecture'
+  ],
+  live: 'https://do-ers.netlify.app',
+  image: '/images/projects/Doers-AI-Task-Manager.png',
+  featured: true,
+},
+
+   {
     id: 'portfolio-v2',
     title: 'Portfolio V2 — Editorial Style',
     description:
@@ -37,6 +57,29 @@ export const projects = [
     image: '/images/projects/portfolio-v2.png',
     featured: true,
   },
+
+{
+    id: 'cine-vault-pro',
+    title: 'CineVault Pro',
+    description:
+      'A premium movie discovery platform — browse trending titles, view details and build a personal watchlist.',
+    tags: ['React', 'Movie API', 'UI Design'],
+    live: 'https://cine-vault-pro.vercel.app',
+    image: '/images/projects/cine-vault-pro.png',
+    featured: true,
+  },
+
+  {
+    id: 'yumyum-recipe',
+    title: 'YumYum Recipe',
+    description:
+      'A recipe discovery app with a playful UI — browse dishes, view ingredients and follow step-by-step instructions.',
+    tags: ['React', 'UI/UX', 'Recipe API'],
+    live: 'https://yumyum-recipe.netlify.app',
+    image: '/images/projects/yumyum-recipe.png',
+    featured: true,
+  },
+
   {
     id: 'weather-showcase',
     title: 'Weather Showcase',
@@ -57,16 +100,7 @@ export const projects = [
     image: '/images/projects/isobar-dashboard.png',
     featured: false,
   },
-  {
-    id: 'do-ers',
-    title: 'Do-ers',
-    description:
-      'A minimalist productivity & task-management app focused on speed — add, organize and complete tasks with zero friction.',
-    tags: ['React', 'Productivity', 'LocalStorage'],
-    live: 'https://do-ers.netlify.app',
-    image: '/images/projects/do-ers.png',
-    featured: true,
-  },
+  
   {
     id: 'recipe-findero',
     title: 'Recipe Findero',
@@ -117,24 +151,6 @@ export const projects = [
     image: '/images/projects/currency-value-online.png',
     featured: false,
   },
-  {
-    id: 'yumyum-recipe',
-    title: 'YumYum Recipe',
-    description:
-      'A recipe discovery app with a playful UI — browse dishes, view ingredients and follow step-by-step instructions.',
-    tags: ['React', 'UI/UX', 'Recipe API'],
-    live: 'https://yumyum-recipe.netlify.app',
-    image: '/images/projects/yumyum-recipe.png',
-    featured: true,
-  },
-  {
-    id: 'cine-vault-pro',
-    title: 'CineVault Pro',
-    description:
-      'A premium movie discovery platform — browse trending titles, view details and build a personal watchlist.',
-    tags: ['React', 'Movie API', 'UI Design'],
-    live: 'https://cine-vault-pro.vercel.app',
-    image: '/images/projects/cine-vault-pro.png',
-    featured: true,
-  },
+  
+  
 ];
