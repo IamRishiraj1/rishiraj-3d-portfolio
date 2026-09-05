@@ -9,6 +9,17 @@ export const projects = [
     id: 'GhariGhor-business',
     title:'GhariGhor Business ready website with AI Store assistant',
     description:
+    'DineFlow is a full-stack restaurant ordering and management platform built with Next.js, Prisma, Supabase, and NextAuth.js. It combines a customer storefront and an admin dashboard in one codebase, with real database-backed orders, authentication, payments, uploads, and analytics.',
+    tags: ['Next.js 14 (App Router)', 'TypeScript','Tailwind CSS','lucide-react','Recharts','PostgreSQL on Supabase','Prisma','NextAuth.js (Credentials + JWT)','Supabase Storage','SSLCommerz','Resend','Zod'],
+    live: 'https://dineflowrestaurantplatform.vercel.app',
+    image: '/images/projects/Dineflow-Restaurant.png',
+    featured: true,
+   },
+
+   {
+    id: 'GhariGhor-business',
+    title:'GhariGhor Business ready website with AI Store assistant',
+    description:
       'Full-stack car dealership platform with a customer storefront, an admin dashboard, and an AI sales assistant that qualifies leads in real time — a genuinely production-ready system, not a demo.',
     tags: ['React', 'Node.js',  'Express', 'Gemini', 'cloud image storage', 'authentication', 'automated backups' ],
     live: 'https://garighor-motors.vercel.app',
@@ -34,7 +45,7 @@ export const projects = [
     tags: ['React', 'API Integration', 'CSS'],
     live: 'https://weathershowcase.vercel.app',
     image: '/images/projects/weather-showcase.png',
-    featured: true,
+    featured: false,
   },
   {
     id: 'isobar-dashboard',
@@ -44,7 +55,7 @@ export const projects = [
     tags: ['React', 'Dashboard', 'Data Viz'],
     live: 'https://isobardashboard.netlify.app',
     image: '/images/projects/isobar-dashboard.png',
-    featured: true,
+    featured: false,
   },
   {
     id: 'do-ers',
@@ -54,7 +65,7 @@ export const projects = [
     tags: ['React', 'Productivity', 'LocalStorage'],
     live: 'https://do-ers.netlify.app',
     image: '/images/projects/do-ers.png',
-    featured: false,
+    featured: true,
   },
   {
     id: 'recipe-findero',
@@ -74,7 +85,7 @@ export const projects = [
     tags: ['React', 'Crypto API', 'Real-time Data'],
     live: 'https://pulse-crypto-tracker.netlify.app',
     image: '/images/projects/pulse-crypto-tracker.png',
-    featured: true,
+    featured: false,
   },
   {
     id: 'crypto-tracker',
@@ -114,7 +125,7 @@ export const projects = [
     tags: ['React', 'UI/UX', 'Recipe API'],
     live: 'https://yumyum-recipe.netlify.app',
     image: '/images/projects/yumyum-recipe.png',
-    featured: false,
+    featured: true,
   },
   {
     id: 'cine-vault-pro',
