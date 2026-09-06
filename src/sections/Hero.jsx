@@ -33,9 +33,11 @@ export default function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="eyebrow mb-5"
+          className="eyebrow mb-5 max-w-2xl !normal-case tracking-normal md:!tracking-[0.15em]"
         >
-          AI-Powered Web Developer
+          AI Automation Engineer&nbsp;|&nbsp;Full-Stack AI Developer&nbsp;|&nbsp;React, Python &amp;
+          TypeScript&nbsp;|&nbsp;AI-Powered Interfaces&nbsp;|&nbsp;LLM APIs&nbsp;|&nbsp;Lead Capture
+          &amp; Workflow Automation
         </motion.p>
 
         <motion.h1
@@ -44,9 +46,9 @@ export default function Hero() {
           transition={{ delay: 0.35, duration: 0.7 }}
           className="max-w-3xl font-display text-5xl font-semibold leading-[1.05] tracking-tight text-ink md:text-7xl"
         >
-          I build interfaces
+          AI-Powered
           <br />
-          that feel <span className="neon-text">alive</span>.
+          Full-Stack <span className="neon-text">Developer</span>.
         </motion.h1>
 
         <motion.p
@@ -55,9 +57,9 @@ export default function Hero() {
           transition={{ delay: 0.55, duration: 0.6 }}
           className="mt-6 max-w-xl font-body text-base text-ink-muted md:text-lg"
         >
-          Hi, I'm <span className="text-ink">Rishi Raj Biswas</span> — a full-stack developer who
-          pairs React, Python and modern AI tooling to design, automate and ship
-          production-grade web experiences.
+          Hi, I'm <span className="text-ink">Rishi Raj Biswas</span>. I build modern web
+          applications, AI-powered interfaces, business automation systems and intelligent
+          workflows with React, JavaScript, Python, APIs and LLMs.
         </motion.p>
 
         <motion.div

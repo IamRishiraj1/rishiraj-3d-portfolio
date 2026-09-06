@@ -38,12 +38,13 @@ export default function About() {
 
         <Reveal delay={0.1}>
           <p className="mt-8 max-w-2xl text-ink-muted md:text-lg">
-            Frontend-focused web developer skilled in React, JavaScript and Python/Django, with
-            a portfolio of deployed web applications spanning dashboards, trackers and utility
-            tools. Experienced across junior development work, freelance client projects and AI
-            automation projects, with a solid foundation in cybersecurity and digital skills
-            training. I'm a quick learner who enjoys shipping clean, functional, well-designed
-            products — now with an AI-first workflow layered on top.
+            AI Automation Engineer and full-stack developer building modern web applications,
+            AI-powered interfaces, business automation systems and intelligent workflows with
+            React, Python, TypeScript, APIs and LLMs. I've shipped full-stack products end to
+            end — from customer-facing storefronts and dashboards to AI sales assistants and
+            task-automation tools — with a solid foundation in cybersecurity and digital skills
+            training underneath it all. I'm a quick learner who enjoys shipping clean,
+            functional, well-designed products with an AI-first workflow layered on top.
           </p>
         </Reveal>
 
