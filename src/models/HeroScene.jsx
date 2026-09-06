@@ -129,7 +129,9 @@ export default function HeroScene({ quality = 'high' }) {
       <Stars radius={60} depth={40} count={quality === 'high' ? 3000 : 1200} factor={2.2} fade speed={0.6} />
       <RigParallax>
         <Float speed={1.4} rotationIntensity={0.3} floatIntensity={0.8}>
-          <Console />
+          <group position={[2, -0.3, -1.2]}>
+            <Console />
+          </group>
         </Float>
         <OrbitNodes />
       </RigParallax>
