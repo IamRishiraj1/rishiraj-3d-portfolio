@@ -2,31 +2,10 @@
 // GitHub links intentionally aren't per-project — every card links to
 // the full repository list at https://github.com/IamRishiraj1?tab=repositories
 // Screenshots live in public/images/projects/
+// NOTE: DineFlow and GariGhor are flagship projects — they live in
+// src/data/caseStudies.js and render via the FeaturedWork section, not here.
 
 export const projects = [
-  
-   {
-    id: 'Dineflow-Restuarant',
-    title:'DineFlow — Full-stack restaurant ordering platform',
-    description:
-    'DineFlow is a full-stack restaurant ordering and management platform built with Next.js, Prisma, Supabase, and NextAuth.js. It combines a customer storefront and an admin dashboard in one codebase, with real database-backed orders, authentication, payments, uploads, and analytics.',
-    tags: ['Next.js 14 (App Router)', 'TypeScript','Tailwind CSS','lucide-react','Recharts','PostgreSQL on Supabase','Prisma','NextAuth.js (Credentials + JWT)','Supabase Storage','SSLCommerz','Resend','Zod'],
-    live: 'https://dineflowrestaurantplatform.vercel.app',
-    image: '/images/projects/Dineflow-Restaurant.png',
-    featured: true,
-   },
-
-   {
-    id: 'GhariGhor-business',
-    title:'GhariGhor Business ready website with AI Store assistant',
-    description:
-      'Full-stack car dealership platform with a customer storefront, an admin dashboard, and an AI sales assistant that qualifies leads in real time — a genuinely production-ready system, not a demo.',
-    tags: ['React', 'Node.js',  'Express', 'Gemini', 'cloud image storage', 'authentication', 'automated backups' ],
-    live: 'https://garighor-motors.vercel.app',
-    image: '/images/projects/GHARIGHOR.png',
-    featured: true,
-   },
-
    {
   id: 'Doers-AI-Task-Manager',
   title: 'Do-ers — AI-Powered Task Manager',
@@ -43,7 +22,12 @@ export const projects = [
     'Serverless Architecture'
   ],
   live: 'https://do-ers.netlify.app',
+  github: 'https://github.com/IamRishiraj1/task-manager-ai',
   image: '/images/projects/Doers-AI-Task-Manager.png',
+  proof: {
+    image: '/images/projects/do-ers-proof.png',
+    caption: 'Real browser notifications — task deadline reminders firing on schedule, not a mockup.',
+  },
   featured: true,
 },
 

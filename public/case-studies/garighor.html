@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GariGhor Motors — Case Study | Rishiraj</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #C98A3D;
+      --ink: #14181F;
+      --bg: #F9F7F2;
+      --card: #FFFFFF;
+      --muted: #5B6B66;
+      --border: #E4DFD2;
+      --green: #215A3F;
+      --green-bg: #E4EFE8;
+      --purple: #5A3E8A;
+      --purple-bg: #EDE4F5;
+      --code-bg: #1A1F2E;
+      --code-text: #A8DAFF;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+      font-size: 15px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #0D1117 0%, #1A2332 60%, #0D1117 100%);
+      color: #F3EFE6;
+      padding: 72px 24px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(115deg, rgba(201,138,61,0.06) 0, rgba(201,138,61,0.06) 1px, transparent 1px, transparent 60px);
+    }
+    .hero-inner { position: relative; max-width: 780px; margin: 0 auto; }
+    .hero-badge {
+      display: inline-block;
+      border: 1px solid rgba(201,138,61,0.5);
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero-sub {
+      font-size: 17px;
+      color: #A8B4C0;
+      max-width: 580px;
+      margin: 0 auto 36px;
+      line-height: 1.6;
+    }
+    .hero-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .hero-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 20px;
+      border-radius: 9px;
+      font-size: 13.5px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity .2s;
+    }
+    .hero-link:hover { opacity: .85; }
+    .hero-link.primary { background: var(--gold); color: var(--ink); }
+    .hero-link.ghost { border: 1px solid rgba(255,255,255,0.25); color: #F3EFE6; }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 64px 0; }
+    .section + .section { border-top: 1px solid var(--border); }
+
+    h2 {
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      letter-spacing: -0.3px;
+    }
+    h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    p { color: var(--muted); margin-bottom: 14px; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── STAT ROW ── */
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .stat-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+    }
+    .stat-num {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-num.gold { color: var(--gold); }
+    .stat-label { font-size: 12px; color: var(--muted); font-weight: 500; }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+    .card:last-child { margin-bottom: 0; }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    /* ── TAGS ── */
+    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .tag {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 11px;
+      border-radius: 20px;
+      background: var(--green-bg);
+      color: var(--green);
+    }
+    .tag.purple { background: var(--purple-bg); color: var(--purple); }
+    .tag.gold { background: #FDF3E3; color: #8A5A15; }
+    .tag.blue { background: #E3EDF9; color: #1A4E8A; }
+    .tag.dark { background: #ECEFF1; color: #37474F; }
+
+    /* ── CODE BLOCK ── */
+    .code-block {
+      background: var(--code-bg);
+      border-radius: 12px;
+      padding: 20px 24px;
+      overflow-x: auto;
+      margin: 20px 0;
+      position: relative;
+    }
+    .code-block pre {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--code-text);
+      white-space: pre;
+    }
+    .code-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: #6B7A8D;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+    .kw { color: #FF79C6; }
+    .fn { color: #50FA7B; }
+    .str { color: #F1FA8C; }
+    .cm { color: #6272A4; }
+    .prop { color: #8BE9FD; }
+    .bool { color: #BD93F9; }
+
+    /* ── PIPELINE ── */
+    .pipeline {
+      display: flex;
+      align-items: flex-start;
+      gap: 0;
+      margin: 28px 0;
+      overflow-x: auto;
+      padding-bottom: 8px;
+    }
+    .pipeline-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 110px;
+    }
+    .pipeline-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--ink);
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      flex-shrink: 0;
+    }
+    .pipeline-name {
+      font-size: 11px;
+      font-weight: 700;
+      text-align: center;
+      color: var(--ink);
+    }
+    .pipeline-sub {
+      font-size: 10px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 2px;
+    }
+    .pipeline-arrow {
+      flex: 1;
+      height: 2px;
+      background: var(--gold);
+      margin-top: 23px;
+      min-width: 20px;
+      position: relative;
+    }
+    .pipeline-arrow::after {
+      content: '›';
+      position: absolute;
+      right: -6px;
+      top: -11px;
+      color: var(--gold);
+      font-size: 18px;
+    }
+
+    /* ── TIMELINE ── */
+    .timeline { margin: 24px 0; }
+    .timeline-item {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .timeline-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+    .timeline-content h4 {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+    .timeline-content p {
+      font-size: 13.5px;
+      margin: 0;
+    }
+
+    /* ── TWO COL ── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 620px) { .two-col { grid-template-columns: 1fr; } }
+
+    /* ── CALLOUT ── */
+    .callout {
+      border-left: 3px solid var(--gold);
+      background: #FDF8F1;
+      padding: 16px 20px;
+      border-radius: 0 10px 10px 0;
+      margin: 20px 0;
+    }
+    .callout p { color: var(--ink); font-weight: 500; font-size: 14.5px; font-style: italic; }
+
+    /* ── PITCH BOX ── */
+    .pitch-box {
+      background: linear-gradient(135deg, #0D1117 0%, #1A2332 100%);
+      border-radius: 16px;
+      padding: 32px;
+      color: #F3EFE6;
+      margin-top: 32px;
+    }
+    .pitch-box h3 { color: var(--gold); margin-bottom: 12px; font-size: 18px; }
+    .pitch-box p { color: #A8B4C0; font-size: 14px; line-height: 1.7; }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--ink);
+      color: #6B7A8D;
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 13px;
+    }
+    .footer a { color: var(--gold); text-decoration: none; }
+    .footer strong { color: #F3EFE6; }
+
+    /* ── PRINT ── */
+    @media print {
+      .hero-links { display: none; }
+      .section { padding: 40px 0; }
+      body { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Full-Stack + AI Automation · Case Study</div>
+    <h1>GariGhor Motors<br><span>— From Brief to Production</span></h1>
+    <p class="hero-sub">
+      A complete, handover-ready car dealership platform with an AI front-desk assistant
+      that captures qualified leads directly into PostgreSQL — built, debugged, and deployed
+      from scratch in a single project sprint.
+    </p>
+    <div class="hero-links">
+      <a class="hero-link primary" href="https://garighor-motors.vercel.app" target="_blank">
+        ↗ Live Site
+      </a>
+      <a class="hero-link ghost" href="https://github.com/IamRishiraj1/-garighor-motors" target="_blank">
+        ⌥ GitHub Repo
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     OVERVIEW STATS
+═══════════════════════════════════════════════════════ -->
+<div class="container">
+  <div class="stat-row" style="margin-top: 48px; margin-bottom: 0;">
+    <div class="stat-card">
+      <div class="stat-num gold">35+</div>
+      <div class="stat-label">React components built</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num gold">9</div>
+      <div class="stat-label">REST API endpoints</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num gold">4</div>
+      <div class="stat-label">PostgreSQL models</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num gold">3</div>
+      <div class="stat-label">Cloud services integrated</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num gold">2</div>
+      <div class="stat-label">Lead-capture paths to DB</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     1. THE BRIEF
+═══════════════════════════════════════════════════════ -->
+<div class="container">
+  <section class="section">
+    <div class="section-label">01 — The Brief</div>
+    <h2>A showroom website that actually works for the owner</h2>
+    <p>
+      The brief was simple but broad: build a production-ready website for a Chattogram-based
+      reconditioned car dealership that could be handed directly to the showroom owner to run
+      his business — no developer involvement required for day-to-day use.
+    </p>
+    <p>
+      That meant solving three distinct problems simultaneously: a public customer site
+      that builds trust and drives enquiries, a private admin console where non-technical
+      staff can manage inventory, and a system that doesn't let leads fall through the
+      cracks at 11 PM when nobody's watching the inbox.
+    </p>
+
+    <div class="callout">
+      <p>"Most dealership websites are digital brochures. A customer gets curious, doesn't get
+      an answer fast enough, and leaves. I built something that captures them instead."</p>
+    </div>
+
+    <div class="two-col" style="margin-top: 28px;">
+      <div class="card">
+        <h3>Customer needs</h3>
+        <p>Browse real inventory with prices, save favourites, submit enquiries and
+        test-drive requests, and get instant AI assistance at any hour.</p>
+      </div>
+      <div class="card">
+        <h3>Owner needs</h3>
+        <p>Add/edit/delete car listings, upload photos, view all customer enquiries
+        in one place, and never manually transcribe a phone number from a chat log again.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     2. TECH STACK
+═══════════════════════════════════════════════════════ -->
+<div class="container">
+  <section class="section">
+    <div class="section-label">02 — Technical Stack</div>
+    <h2>Every choice justified, every layer understood</h2>
+    <p>
+      No boilerplate generators, no starter kits. Every file in this project was written
+      by hand, including the Prisma schema, all Express middleware, and the entire
+      1,686-line React application.
+    </p>
+
+    <div class="card-grid" style="margin-top: 28px;">
+      <div class="card">
+        <h3>Frontend</h3>
+        <div class="tag-row">
+          <span class="tag blue">React 18</span>
+          <span class="tag blue">Vite</span>
+          <span class="tag blue">Lucide React</span>
+          <span class="tag blue">CSS-in-JS</span>
+        </div>
+        <p style="margin-top: 14px;">Single-file React app (App.jsx). No component library —
+        every UI element styled inline for full control and zero dependency bloat.</p>
+      </div>
+      <div class="card">
+        <h3>Backend</h3>
+        <div class="tag-row">
+          <span class="tag">Node.js</span>
+          <span class="tag">Express.js</span>
+          <span class="tag">Prisma ORM</span>
+          <span class="tag">JWT Auth</span>
+          <span class="tag">bcrypt</span>
+          <span class="tag">Multer</span>
+        </div>
+        <p style="margin-top: 14px;">RESTful API with JWT-protected admin routes, bcrypt
+        password hashing, rate limiting, and async error handling that prevents server crashes.</p>
+      </div>
+      <div class="card">
+        <h3>Database & Storage</h3>
+        <div class="tag-row">
+          <span class="tag gold">Neon PostgreSQL</span>
+          <span class="tag gold">Cloudinary</span>
+        </div>
+        <p style="margin-top: 14px;">Serverless Postgres via Neon with Prisma migrations.
+        Car photos stored on Cloudinary's free tier — persists through server restarts
+        where local disk storage would not.</p>
+      </div>
+      <div class="card">
+        <h3>AI Layer</h3>
+        <div class="tag-row">
+          <span class="tag purple">Google Gemini 3.6 Flash</span>
+          <span class="tag purple">Structured Output</span>
+          <span class="tag purple">responseSchema</span>
+        </div>
+        <p style="margin-top: 14px;">Gemini API with <code style="font-family: monospace; background: #F0ECE4; padding: 1px 5px; border-radius: 4px; font-size: 12px;">responseMimeType: "application/json"</code>
+        forces typed JSON on every response — no regex parsing of free text.</p>
+      </div>
+      <div class="card">
+        <h3>Infrastructure</h3>
+        <div class="tag-row">
+          <span class="tag dark">Vercel</span>
+          <span class="tag dark">Render</span>
+          <span class="tag dark">GitHub CI/CD</span>
+          <span class="tag dark">UptimeRobot</span>
+        </div>
+        <p style="margin-top: 14px;">Frontend on Vercel (auto-deploys on push). Backend on
+        Render free tier, kept alive via UptimeRobot 5-minute pings. Migrations run at
+        build time, not at startup, to eliminate cold-start latency.</p>
+      </div>
+      <div class="card">
+        <h3>Backup System</h3>
+        <div class="tag-row">
+          <span class="tag dark">pg_dump</span>
+          <span class="tag dark">adm-zip</span>
+          <span class="tag dark">Task Scheduler</span>
+        </div>
+        <p style="margin-top: 14px;">Custom Node.js backup script: daily pg_dump of the
+        live database + zipped Cloudinary uploads, stored to an external drive. Restore
+        tested against a live Neon branch — verified, not assumed.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     3. AI PIPELINE
+═══════════════════════════════════════════════════════ -->
+<div class="container">
+  <section class="section">
+    <div class="section-label">03 — The AI Lead-Capture Pipeline</div>
+    <h2>The part that makes this more than a chat widget</h2>
+    <p>
+      Standard AI chat assistants reply to messages. This one is purpose-built to convert
+      conversations into structured, database-ready leads — automatically, at any hour,
+      with no human in the loop.
+    </p>
+
+    <div class="pipeline">
+      <div class="pipeline-step">
+        <div class="pipeline-icon">💬</div>
+        <div class="pipeline-name">Customer</div>
+        <div class="pipeline-sub">sends a message</div>
+      </div>
+      <div class="pipeline-arrow"></div>
+      <div class="pipeline-step">
+        <div class="pipeline-icon">🔧</div>
+        <div class="pipeline-name">Node.js</div>
+        <div class="pipeline-sub">builds inventory context</div>
+      </div>
+      <div class="pipeline-arrow"></div>
+      <div class="pipeline-step">
+        <div class="pipeline-icon">🤖</div>
+        <div class="pipeline-name">Gemini API</div>
+        <div class="pipeline-sub">returns typed JSON</div>
+      </div>
+      <div class="pipeline-arrow"></div>
+      <div class="pipeline-step">
+        <div class="pipeline-icon">✅</div>
+        <div class="pipeline-name">Validation</div>
+        <div class="pipeline-sub">contact + dedup check</div>
+      </div>
+      <div class="pipeline-arrow"></div>
+      <div class="pipeline-step">
+        <div class="pipeline-icon">🗃️</div>
+        <div class="pipeline-name">PostgreSQL</div>
+        <div class="pipeline-sub">lead row created</div>
+      </div>
+      <div class="pipeline-arrow"></div>
+      <div class="pipeline-step">
+        <div class="pipeline-icon">📋</div>
+        <div class="pipeline-name">Dashboard</div>
+        <div class="pipeline-sub">ready-to-call lead</div>
+      </div>
+    </div>
+
+    <h3 style="margin-top: 28px; margin-bottom: 12px;">The structured output schema</h3>
+    <p>
+      The core technical decision: using <code style="font-family: monospace; background: #F0ECE4; padding: 1px 5px; border-radius: 4px; font-size: 12px;">responseSchema</code> in the Gemini API call
+      to force a typed JSON response on every single message — not just when the model
+      decides to use a "tool." This means the backend always receives a predictable structure
+      it can parse and act on, regardless of what the customer said.
+    </p>
+
+    <div class="code-block">
+      <div class="code-label">// backend/src/routes/chat.js — RESPONSE_SCHEMA</div>
+      <pre><span class="kw">const</span> <span class="prop">RESPONSE_SCHEMA</span> = {
+  <span class="prop">type</span>: <span class="str">"OBJECT"</span>,
+  <span class="prop">properties</span>: {
+    <span class="prop">replyToUser</span>:    { <span class="prop">type</span>: <span class="str">"STRING"</span>  },  <span class="cm">// shown to customer</span>
+    <span class="prop">triggerBooking</span>: { <span class="prop">type</span>: <span class="str">"BOOLEAN"</span> },  <span class="cm">// true only when all fields collected</span>
+    <span class="prop">bookingDetails</span>: {
+      <span class="prop">type</span>: <span class="str">"OBJECT"</span>,
+      <span class="prop">properties</span>: {
+        <span class="prop">customerName</span>:       { <span class="prop">type</span>: <span class="str">"STRING"</span> },
+        <span class="prop">contactInfo</span>:        { <span class="prop">type</span>: <span class="str">"STRING"</span> },
+        <span class="prop">appointmentDateTime</span>:{ <span class="prop">type</span>: <span class="str">"STRING"</span> },
+        <span class="prop">vehicleStockNo</span>:     { <span class="prop">type</span>: <span class="str">"STRING"</span> },
+      }
+    },
+    <span class="prop">financingRequest</span>: { <span class="prop">type</span>: <span class="str">"OBJECT"</span> }  <span class="cm">// EMI calculator trigger</span>
+  },
+  <span class="prop">required</span>: [<span class="str">"replyToUser"</span>, <span class="str">"triggerBooking"</span>]
+};</pre>
+    </div>
+
+    <h3 style="margin-top: 24px; margin-bottom: 12px;">Code-enforced validation — not prompt-enforced</h3>
+    <p>
+      The system prompt asks the model to verify contact completeness. But LLM compliance
+      is probabilistic. So the backend enforces it again in code — independently of what
+      the model decided — before anything touches the database.
+    </p>
+
+    <div class="code-block">
+      <div class="code-label">// contact validation — server-side, never trusts the model alone</div>
+      <pre><span class="kw">function</span> <span class="fn">isValidContact</span>(contactInfo) {
+  <span class="kw">const</span> trimmed = contactInfo.trim();
+  <span class="kw">const</span> emailLike = <span class="str">/^[^\s@]+@[^\s@]+\.[^\s@]+$/</span>.test(trimmed);
+  <span class="kw">const</span> digitsOnly = trimmed.replace(<span class="str">/\D/g</span>, <span class="str">""</span>);
+  <span class="kw">const</span> phoneLike  = digitsOnly.length >= <span class="bool">7</span>
+                  && digitsOnly.length <= <span class="bool">15</span>
+                  && <span class="str">/^[\d\s+\-()]+$/</span>.test(trimmed);
+  <span class="kw">return</span> emailLike || phoneLike;
+}</pre>
+    </div>
+
+    <div class="card-grid" style="margin-top: 28px;">
+      <div class="card">
+        <h3>🔒 Duplicate lead prevention</h3>
+        <p>A dedup query checks for a lead with the same name, car, and source created
+        in the past 10 minutes before writing a new row. Scoped by source so demo
+        testing never blocks real customer bookings.</p>
+      </div>
+      <div class="card">
+        <h3>🔁 Automatic retry on 503</h3>
+        <p>Gemini's free tier occasionally returns 503 "high demand" errors. The backend
+        retries automatically up to 3 times with 1s/2s backoff — verified with a mock
+        fetch test — so brief spikes are invisible to the customer.</p>
+      </div>
+      <div class="card">
+        <h3>📊 Real failure feedback</h3>
+        <p>Each outcome has a specific reply: <code>invalid_contact</code> asks them to
+        re-check, <code>db_error</code> gives them a direct phone number, <code>duplicate</code>
+        keeps the confirmation. The customer is never told "booked" when nothing was saved.</p>
+      </div>
+      <div class="card">
+        <h3>💰 EMI calculator</h3>
+        <p>If a customer states a down payment amount, the backend computes an actual
+        monthly estimate using real car price data and a configurable interest rate —
+        appended to the reply without the model inventing a number.</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top: 36px; margin-bottom: 12px;">🛡️ Graceful fallback — the AI is an interface, not a single point of failure</h3>
+    <p>
+      A critical architectural upgrade: recognising that a Gemini 503 error should never mean a lost lead.
+      The system now has two independent paths to the same outcome — the LLM and a structured form —
+      both posting to the exact same <code>/api/leads</code> Node.js endpoint.
+    </p>
+
+    <div class="code-block" style="margin: 16px 0;">
+      <pre style="color: #8BE9FD;">             ┌── Gemini AI ─────────────────────┐
+Customer ────┤                                  ├──→ POST /api/leads ──→ PostgreSQL
+             └── Fallback Booking Form ─────────┘                           │
+                                                                             ↓
+                                                                      Admin Dashboard</pre>
+    </div>
+
+    <p>
+      When Gemini is unavailable, the chat widget surfaces a 4-step booking wizard inline —
+      no redirect, no new page — collecting vehicle, date/time, name, and contact, then posting
+      directly to the backend. The dealer's dashboard sees the same structured lead either way.
+      The AI never appears in the data path, only in the user experience.
+    </p>
+
+    <div class="callout" style="margin-top: 16px;">
+      <p>"The AI is an interface. The backend is the source of truth. That's the architecture I'd bring to your project."</p>
+    </div>
+
+    <div class="card-grid" style="margin-top: 20px;">
+      <div class="card">
+        <h3>🔁 Auto-retry before fallback</h3>
+        <p>Before showing the fallback, the backend retries Gemini up to 3 times (1s/2s backoff). Brief demand spikes recover invisibly — only genuine outages reach the customer.</p>
+      </div>
+      <div class="card">
+        <h3>📋 4-step booking wizard</h3>
+        <p>Guaranteed structured capture: Vehicle → Date/Time → Name → Contact → Confirm. Posts to <code>/api/leads</code> directly — same table, same admin dashboard, zero AI dependency.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     4. FEATURES BUILT
+═══════════════════════════════════════════════════════ -->
+<div class="container">
+  <section class="section">
+    <div class="section-label">04 — Features Built</div>
+    <h2>Everything the showroom actually needs</h2>
+
+    <div class="two-col" style="margin-top: 28px;">
+      <div>
+        <h3 style="color: var(--gold); margin-bottom: 16px;">Customer site</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>Full inventory catalog</h4>
+              <p>Search, filter by brand/body/fuel/price, sort by mileage, year, or price.
+              Brand filter auto-builds from live inventory — no hardcoded list.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>Car detail + enquiry flow</h4>
+              <p>Full spec sheet with auction grade, features list, status pill. Enquiry
+              and test-drive modal posts a verified lead directly to the database.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>Wishlist</h4>
+              <p>Saved to localStorage, reconciled against live inventory on each load —
+              stale car IDs (deleted listings) are pruned automatically.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>Real auth — register & login</h4>
+              <p>bcrypt-hashed passwords, 30-day JWT sessions, session restored on page
+              load via /api/auth/me. Admin role gates the dealer console.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>Dynamic hero image</h4>
+              <p>Dealer can update the homepage banner photo from the admin console.
+              Stored in a singleton Setting row in PostgreSQL.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="color: var(--gold); margin-bottom: 16px;">Dealer console</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>Full inventory CRUD</h4>
+              <p>Add, edit, delete listings with photo upload to Cloudinary. Status
+              changes (available/reserved/sold) update in one click.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>Leads inbox</h4>
+              <p>All customer enquiries and AI-captured bookings in one dashboard. Shows
+              source badge (form vs AI-captured), car, contact, timestamp.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>Lead pipeline management</h4>
+              <p>Status dropdown per lead: new → contacted → closed. Prevents follow-ups
+              from being lost in an unstructured inbox.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>Mobile-responsive layout</h4>
+              <p>Sidebar collapses to a horizontal tab bar on screens under 780px.
+              All CRUD actions work correctly on a phone.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>Portfolio demo console</h4>
+              <p>Public sandbox version — no credentials needed. Browser-only inventory
+              edits, live AI chat, and real demo leads isolated in the database by source tag.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>Guaranteed booking wizard</h4>
+              <p>4-step structured form (Vehicle → Date/Time → Name → Contact) in the demo console.
+              Posts directly to <code>/api/leads</code> — captures a real lead whether Gemini is
+              available or not. Shows alongside the AI chat as a parallel path.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4>Chat widget fallback form</h4>
+              <p>When the AI is unavailable, the chat bubble surfaces the booking wizard inline —
+              same widget, no redirect. "Book directly" toggle always visible in the header so
+              users who prefer a form can switch at any time.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     5. BUGS FOUND AND FIXED
+═══════════════════════════════════════════════════════ -->
+<div class="container">
+  <section class="section">
+    <div class="section-label">05 — Problems Found & Fixed</div>
+    <h2>What real-world testing actually surfaces</h2>
+    <p>
+      A portfolio project that never encountered real problems proves nothing.
+      These are bugs that appeared during actual use — each one diagnosed from
+      real evidence, not guessed at.
+    </p>
+
+    <div class="card-grid" style="margin-top: 24px;">
+      <div class="card">
+        <div class="tag-row" style="margin-bottom: 12px;"><span class="tag purple">AI</span></div>
+        <h3>Incomplete contact info accepted</h3>
+        <p>Gemini set <code>triggerBooking: true</code> when a customer gave "prasomiy" as
+        an email. Code-level regex validation added — the model's verdict is now double-checked
+        independently before any database write.</p>
+      </div>
+      <div class="card">
+        <div class="tag-row" style="margin-bottom: 12px;"><span class="tag purple">AI</span></div>
+        <h3>Duplicate leads on confirmation</h3>
+        <p>When a customer said "yes, that's right" after booking, the model re-emitted
+        <code>triggerBooking: true</code>, creating duplicate rows. A 10-minute dedup
+        window added per name + car + source combination.</p>
+      </div>
+      <div class="card">
+        <div class="tag-row" style="margin-bottom: 12px;"><span class="tag">Backend</span></div>
+        <h3>Server crash on unhandled async errors</h3>
+        <p>Express 4 doesn't catch errors thrown inside async route handlers — a single
+        bad request could take down the whole process. An <code>asyncHandler</code> wrapper
+        added to every route to forward rejections to the central error handler.</p>
+      </div>
+      <div class="card">
+        <div class="tag-row" style="margin-bottom: 12px;"><span class="tag">Backend</span></div>
+        <h3>Migration running on every cold start</h3>
+        <p><code>prisma migrate deploy</code> was in the Start Command, adding real latency
+        to every wake-up. Moved to the Build Command — migrations run once per deploy,
+        not once per request.</p>
+      </div>
+      <div class="card">
+        <div class="tag-row" style="margin-bottom: 12px;"><span class="tag blue">Frontend</span></div>
+        <h3>Wishlist showing wrong count</h3>
+        <p>Wishlist IDs in localStorage became stale when cars were deleted or re-seeded.
+        On load, saved IDs are now reconciled against live inventory — phantom saves pruned
+        automatically, only if the cars fetch succeeded (guarded against network failures).</p>
+      </div>
+      <div class="card">
+        <div class="tag-row" style="margin-bottom: 12px;"><span class="tag blue">Frontend</span></div>
+        <h3>Markdown rendering in chat</h3>
+        <p>Gemini replies with <code>**bold**</code> and <code>- bullets</code> even when
+        told not to. A lightweight renderer added — splits on bold patterns, maps
+        <code>-&nbsp;</code> prefix lines to bullet divs — no markdown library needed.</p>
+      </div>
+      <div class="card">
+        <div class="tag-row" style="margin-bottom: 12px;"><span class="tag gold">Infra</span></div>
+        <h3>Gemini 503 — high demand errors</h3>
+        <p>Render logs showed repeated 503s ("model currently experiencing high demand")
+        during a testing session. Automatic retry with exponential backoff (1s, 2s,
+        max 3 attempts) added — verified with a mock fetch test.</p>
+      </div>
+      <div class="card">
+        <div class="tag-row" style="margin-bottom: 12px;"><span class="tag gold">Infra</span></div>
+        <h3>Missing database table</h3>
+        <p>The Setting model (for the hero image feature) was added to schema.prisma but
+        the migration was never generated — the live route returned 404. Caught by actually
+        hitting the endpoint and reading the error, not by inspection alone.</p>
+      </div>
+      <div class="card">
+        <div class="tag-row" style="margin-bottom: 12px;"><span class="tag purple">Architecture</span></div>
+        <h3>AI as single point of failure</h3>
+        <p>Gemini 503 errors were silently dropping leads — if the AI failed mid-booking, the customer
+        got an error message and the lead was lost. Fixed by separating the LLM (conversational interface)
+        from the backend (source of truth): the chat widget now falls back to a structured booking wizard
+        that posts to <code>/api/leads</code> directly. Two independent paths, same database, same admin view.</p>
+      </div>
+      <div class="card">
+        <div class="tag-row" style="margin-bottom: 12px;"><span class="tag purple">Architecture</span></div>
+        <h3>Non-deterministic demo experience</h3>
+        <p>A multi-turn Gemini conversation is probabilistic — showing it to a recruiter depends on
+        the AI successfully maintaining context across several messages. Fixed with a guaranteed
+        4-step booking wizard in the demo console that always works, alongside the AI chat.
+        The recruiter can test the deterministic path even when Gemini has high demand.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     6. WHAT MAKES IT PRODUCTION-READY
+═══════════════════════════════════════════════════════ -->
+<div class="container">
+  <section class="section">
+    <div class="section-label">06 — Production Readiness</div>
+    <h2>The things that don't show up in screenshots</h2>
+
+    <div class="card-grid" style="margin-top: 24px;">
+      <div class="card">
+        <h3>Real backup system</h3>
+        <p>Custom Node.js script: <code>pg_dump</code> to custom-format PostgreSQL dump +
+        Cloudinary uploads zipped, stored to an external drive, auto-rotating to keep
+        the last 14 backups. Restore tested against a live Neon branch — not just "set up."</p>
+      </div>
+      <div class="card">
+        <h3>Uptime monitoring</h3>
+        <p>UptimeRobot pings <code>/api/health</code> every 5 minutes, preventing
+        Render's free tier from sleeping. Email alerts on downtime.</p>
+      </div>
+      <div class="card">
+        <h3>Security basics done properly</h3>
+        <p>Helmet.js headers, CORS restricted to frontend origin, bcrypt hashing (cost 10),
+        JWT with 30-day expiry, rate limiting on all public write endpoints, no API keys
+        in frontend code.</p>
+      </div>
+      <div class="card">
+        <h3>Client handover documentation</h3>
+        <p>A 3-page Word document written for a non-technical owner: login instructions,
+        how to add a car step by step, handling enquiries, backup schedule — plus a
+        technical appendix for any future developer.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     7. THE PITCH
+═══════════════════════════════════════════════════════ -->
+<div class="container">
+  <section class="section">
+    <div class="section-label">07 — The Pitch</div>
+    <h2>What this demonstrates for any business</h2>
+    <p>
+      GariGhor Motors was built as a portfolio piece. But the architecture underneath it —
+      an AI assistant that captures qualified leads directly into a structured database,
+      without a human in the loop — applies to any business where customer conversations
+      currently end without a record.
+    </p>
+
+    <div class="pitch-box">
+      <h3>The technical pitch in plain language</h3>
+      <p>
+        When a customer speaks to the AI on this platform, the model doesn't just chat.
+        It acts as an active data collector. The moment the user expresses intent to buy
+        or book, the code forces Gemini to output a strict JSON schema — locking fields
+        for name, contact, date, and vehicle. My Node.js backend validates that data
+        independently of what the model decided, cross-references it against live
+        inventory, prevents duplicates, and writes a structured lead row to PostgreSQL.
+        The dealer opens their dashboard the next morning to a ready-to-call lead,
+        correctly attributed, with no manual work anywhere in the chain.
+      </p>
+      <p style="margin-top: 14px; color: #6B7A8D;">
+        I can build this exact automated pipeline for any business with customer conversations
+        that currently end without a record: clinics, real estate agencies, event booking,
+        service businesses — anywhere a lead falling through at 9 PM costs money.
+      </p>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <p>
+    <strong>Rishiraj</strong> · Full-Stack Developer & AI Automation ·
+    <a href="https://garighor-motors.vercel.app" target="_blank">Live Demo</a> ·
+    <a href="https://github.com/IamRishiraj1/garighor-motors" target="_blank">GitHub</a> ·
+    <a href="https://www.linkedin.com/in/iamrishiraj01" target="_blank">LinkedIn</a>
+  </p>
+  <p style="margin-top: 8px; font-size: 11px; color: #3D4A58;">
+    Built with React · Node.js · Express · PostgreSQL · Prisma · Google Gemini API · Cloudinary · Vercel · Render
+  </p>
+</footer>
+
+</body>
+</html>

@@ -12,7 +12,7 @@ const EMAILJS_PUBLIC_KEY = '_wbg6YpTS0KM6tWNX';
 
 const SOCIAL_LINKS = [
   { icon: FiMail, label: 'Email', href: `mailto:${socials.email}`, value: socials.email },
-  { icon: FiLinkedin, label: 'LinkedIn', href: socials.linkedin, value: '/rishi-raj-biswas-3d' },
+  { icon: FiLinkedin, label: 'LinkedIn', href: socials.linkedin, value: '/iamrishiraj01' },
   { icon: FiGithub, label: 'GitHub', href: socials.github, value: '@IamRishiraj1' },
   { icon: FiMessageCircle, label: 'WhatsApp', href: socials.whatsapp, value: '+880 1410-047197' },
 ];
@@ -58,8 +58,12 @@ export default function Contact() {
         <Reveal>
           <p className="eyebrow mb-4">Contact</p>
           <h2 className="section-title max-w-2xl">
-            Got a project in mind? <span className="neon-text">Let's build it.</span>
+            Have a project in mind? <span className="neon-text">Let's talk.</span>
           </h2>
+          <p className="mt-4 max-w-xl text-ink-muted">
+            Whether you need a full-stack web application, AI-powered assistant, admin
+            dashboard, or automated lead-capture workflow, let's talk.
+          </p>
         </Reveal>
 
         <div className="mt-14 grid grid-cols-1 gap-8 lg:grid-cols-5">
@@ -69,7 +73,35 @@ export default function Contact() {
                 <Field label="Name" name="name" type="text" placeholder="Your name" required />
                 <Field label="Email" name="email" type="email" placeholder="you@email.com" required />
               </div>
-              <Field label="Subject" name="subject" type="text" placeholder="What's this about?" />
+              <div>
+                <label className="mb-2 block font-mono text-xs uppercase tracking-widest text-ink-muted">
+                  Project Type
+                </label>
+                <select
+                  name="subject"
+                  className="w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-ink outline-none transition-colors focus:border-cyan-neon/60"
+                  defaultValue=""
+                >
+                  <option value="" disabled className="bg-void">
+                    What are you looking to build?
+                  </option>
+                  <option value="Full-stack web application" className="bg-void">
+                    Full-stack web application
+                  </option>
+                  <option value="AI assistant / automation" className="bg-void">
+                    AI assistant / automation
+                  </option>
+                  <option value="Admin dashboard" className="bg-void">
+                    Admin dashboard
+                  </option>
+                  <option value="Lead-capture workflow" className="bg-void">
+                    Lead-capture workflow
+                  </option>
+                  <option value="Something else" className="bg-void">
+                    Something else
+                  </option>
+                </select>
+              </div>
               <div>
                 <label className="mb-2 block font-mono text-xs uppercase tracking-widest text-ink-muted">
                   Message
@@ -84,7 +116,7 @@ export default function Contact() {
               </div>
               <button type="submit" data-cursor="hover" className="btn-primary w-full justify-center sm:w-auto" disabled={status === 'sending'}>
                 <FiSend size={14} />
-                {status === 'sending' ? 'Sending...' : 'Send Message'}
+                {status === 'sending' ? 'Sending...' : 'Start a Conversation'}
               </button>
               {status === 'sent' && (
                 <p className="font-mono text-xs text-cyan-neon">Message sent — I'll get back to you soon.</p>

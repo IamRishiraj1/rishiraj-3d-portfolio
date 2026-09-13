@@ -31,20 +31,18 @@ export default function About() {
         <Reveal>
           <p className="eyebrow mb-4">About</p>
           <h2 className="section-title max-w-2xl">
-            An engineer who ships,
-            <br /> powered by <span className="neon-text">AI-native</span> tooling.
+            I don't just build websites.
+            <br /> I build <span className="neon-text">systems</span>.
           </h2>
         </Reveal>
 
         <Reveal delay={0.1}>
           <p className="mt-8 max-w-2xl text-ink-muted md:text-lg">
-            AI Automation Engineer and full-stack developer building modern web applications,
-            AI-powered interfaces, business automation systems and intelligent workflows with
-            React, Python, TypeScript, APIs and LLMs. I've shipped full-stack products end to
-            end — from customer-facing storefronts and dashboards to AI sales assistants and
-            task-automation tools — with a solid foundation in cybersecurity and digital skills
-            training underneath it all. I'm a quick learner who enjoys shipping clean,
-            functional, well-designed products with an AI-first workflow layered on top.
+            I'm a Full-Stack Developer focused on building AI-powered business applications and
+            workflow automation systems. I work across the frontend, backend, databases, APIs,
+            and third-party integrations — from designing interfaces and APIs to implementing
+            authentication, payments, AI workflows, and production deployments. My goal isn't
+            simply to build websites. I build systems that solve real business problems.
           </p>
         </Reveal>
 

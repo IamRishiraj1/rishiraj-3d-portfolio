@@ -1,11 +1,11 @@
 import { Suspense, lazy } from 'react';
-import { FiCode, FiServer, FiGitBranch, FiCpu } from 'react-icons/fi';
+import { FiCode, FiServer, FiGitBranch, FiCpu, FiDatabase } from 'react-icons/fi';
 import Reveal from '../components/Reveal';
 import { skillCategories } from '../data/skills';
 
 const SkillsOrbit = lazy(() => import('../models/SkillsOrbit'));
 
-const ICONS = { code: FiCode, server: FiServer, git: FiGitBranch, brain: FiCpu };
+const ICONS = { code: FiCode, server: FiServer, git: FiGitBranch, brain: FiCpu, database: FiDatabase };
 
 export default function Skills() {
   return (
@@ -31,7 +31,7 @@ export default function Skills() {
             {skillCategories.map((cat, i) => {
               const Icon = ICONS[cat.icon];
               return (
-                <Reveal key={cat.title} delay={0.08 * i}>
+                <Reveal key={cat.title} delay={0.08 * i} className={i === skillCategories.length - 1 ? 'sm:col-span-2' : ''}>
                   <div className="glass-card h-full p-6 transition-all duration-300 hover:border-violet-neon/40 hover:shadow-neon-violet">
                     <Icon className="mb-3 text-violet-neon" size={20} />
                     <h3 className="mb-3 font-display text-base font-medium text-ink">

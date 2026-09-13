@@ -4,11 +4,10 @@ import { FiMenu, FiX, FiMoon, FiSun, FiDownload } from 'react-icons/fi';
 import { useTheme } from '../hooks/useTheme';
 
 const LINKS = [
+  { href: '#home', label: 'Home' },
+  { href: '#work', label: 'Work' },
+  { href: '#capabilities', label: 'Capabilities' },
   { href: '#about', label: 'About' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#certificates', label: 'Certificates' },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -62,7 +61,7 @@ export default function Navbar() {
               <FiDownload size={14} /> Resume
             </a>
             <a href="#contact" data-cursor="hover" className="btn-primary">
-              Hire Me
+              Let's Talk
             </a>
           </div>
 

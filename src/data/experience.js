@@ -27,7 +27,7 @@ export const experience = [
 
 export const socials = {
   email: 'rjrishiraj3@gmail.com',
-  linkedin: 'https://www.linkedin.com/in/rishi-raj-biswas-3d',
+  linkedin: 'https://www.linkedin.com/in/iamrishiraj01',
   whatsapp: 'https://wa.me/8801410047197',
   github: 'https://github.com/IamRishiraj1',
   githubRepos: 'https://github.com/IamRishiraj1?tab=repositories',

@@ -4,11 +4,15 @@ import CustomCursor from './components/CustomCursor';
 import StarfieldBackground from './components/StarfieldBackground';
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
-import About from './sections/About';
-import Skills from './sections/Skills';
+import WhatIBuild from './sections/WhatIBuild';
+import FeaturedWork from './sections/FeaturedWork';
 import Projects from './sections/Projects';
-import Experience from './sections/Experience';
+import Capabilities from './sections/Capabilities';
+import Skills from './sections/Skills';
+import HowIWork from './sections/HowIWork';
+import About from './sections/About';
 import Certificates from './sections/Certificates';
+import AvailableForWork from './sections/AvailableForWork';
 import Contact from './sections/Contact';
 import Footer from './sections/Footer';
 
@@ -28,11 +32,15 @@ export default function App() {
         <Navbar />
         <main>
           <Hero />
-          <About />
-          <Skills />
+          <WhatIBuild />
+          <FeaturedWork />
           <Projects />
-          <Experience />
+          <Capabilities />
+          <Skills />
+          <HowIWork />
+          <About />
           <Certificates />
+          <AvailableForWork />
           <Contact />
         </main>
         <Footer />

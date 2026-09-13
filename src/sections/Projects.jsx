@@ -6,13 +6,13 @@ import { socials } from '../data/experience';
 
 export default function Projects() {
   return (
-    <section id="projects" className="relative py-28 md:py-36">
+    <section id="more-projects" className="relative py-28 md:py-36">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <Reveal className="flex flex-wrap items-end justify-between gap-6">
           <div>
-            <p className="eyebrow mb-4">Selected Work</p>
+            <p className="eyebrow mb-4">More Projects</p>
             <h2 className="section-title">
-              Things I've <span className="neon-text">built &amp; shipped</span>.
+              Everything else I've <span className="neon-text">built &amp; shipped</span>.
             </h2>
           </div>
           <a
@@ -75,6 +75,31 @@ function ProjectCard({ project }) {
           ))}
         </div>
 
+        {project.proof && (
+          <a
+            href={project.proof.image}
+            target="_blank"
+            rel="noreferrer"
+            data-cursor="hover"
+            className="group/proof mt-4 flex items-center gap-3 rounded-xl border border-cyan-neon/20 bg-cyan-neon/[0.03] p-2.5 transition-colors hover:border-cyan-neon/40"
+          >
+            <img
+              src={project.proof.image}
+              alt="Verified in production"
+              loading="lazy"
+              className="h-12 w-16 shrink-0 rounded-md object-cover"
+            />
+            <span>
+              <span className="block font-mono text-[10px] uppercase tracking-wider text-cyan-neon">
+                Verified in production
+              </span>
+              <span className="mt-0.5 block text-[11px] leading-snug text-ink-muted">
+                {project.proof.caption}
+              </span>
+            </span>
+          </a>
+        )}
+
         <div className="mt-6 flex items-center gap-4 border-t border-white/10 pt-4">
           <a
             href={project.live}
@@ -86,7 +111,7 @@ function ProjectCard({ project }) {
             <FiExternalLink size={13} /> Live Demo
           </a>
           <a
-            href={socials.githubRepos}
+            href={project.github || socials.githubRepos}
             target="_blank"
             rel="noreferrer"
             data-cursor="hover"

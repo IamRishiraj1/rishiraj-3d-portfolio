@@ -34,22 +34,19 @@ export default function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="eyebrow mb-5 max-w-2xl !normal-case tracking-normal md:!tracking-[0.15em]"
+          className="eyebrow mb-5"
         >
-          AI Automation Engineer&nbsp;|&nbsp;Full-Stack AI Developer&nbsp;|&nbsp;React, Python &amp;
-          TypeScript&nbsp;|&nbsp;AI-Powered Interfaces&nbsp;|&nbsp;LLM APIs&nbsp;|&nbsp;Lead Capture
-          &amp; Workflow Automation
+          Full-Stack Development · AI Automation
         </motion.p>
 
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.35, duration: 0.7 }}
-          className="max-w-3xl font-display text-5xl font-semibold leading-[1.05] tracking-tight text-ink md:text-7xl"
+          className="max-w-3xl font-display text-4xl font-semibold leading-[1.1] tracking-tight text-ink md:text-6xl"
         >
-          AI-Powered
-          <br />
-          Full-Stack <span className="neon-text">Developer</span>.
+          Full-Stack Developer Building{' '}
+          <span className="neon-text">AI-Powered Business Applications</span>
         </motion.h1>
 
         <motion.p
@@ -58,9 +55,8 @@ export default function Hero() {
           transition={{ delay: 0.55, duration: 0.6 }}
           className="mt-6 max-w-xl font-body text-base text-ink-muted md:text-lg"
         >
-          Hi, I'm <span className="text-ink">Rishi Raj Biswas</span>. I build modern web
-          applications, AI-powered interfaces, business automation systems and intelligent
-          workflows with React, JavaScript, Python, APIs and LLMs.
+          I build production-ready web applications, AI automation systems, and business
+          workflows using React, TypeScript, Node.js, PostgreSQL, and modern AI APIs.
         </motion.p>
 
         <motion.div
@@ -69,19 +65,22 @@ export default function Hero() {
           transition={{ delay: 0.7, duration: 0.6 }}
           className="mt-10 flex flex-wrap items-center gap-4"
         >
-          <a href="#contact" data-cursor="hover" className="btn-primary">
-            Hire Me
+          <a href="#work" data-cursor="hover" className="btn-primary">
+            View My Work
+          </a>
+          <a href="#contact" data-cursor="hover" className="btn-outline">
+            Let's Work Together
           </a>
           <a href="/resume.pdf" download data-cursor="hover" className="btn-outline">
-            <FiDownload size={14} /> Download Resume
+            <FiDownload size={14} /> Resume
           </a>
         </motion.div>
       </div>
 
       <motion.a
-        href="#about"
+        href="#build"
         data-cursor="hover"
-        aria-label="Scroll to About"
+        aria-label="Scroll to What I Build"
         className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-ink-muted"
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
