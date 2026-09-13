@@ -24,10 +24,6 @@ export const projects = [
   live: 'https://do-ers.netlify.app',
   github: 'https://github.com/IamRishiraj1/task-manager-ai',
   image: '/images/projects/Doers-AI-Task-Manager.png',
-  proof: {
-    image: '/images/projects/do-ers-proof.png',
-    caption: 'Real browser notifications — task deadline reminders firing on schedule, not a mockup.',
-  },
   featured: true,
 },
 

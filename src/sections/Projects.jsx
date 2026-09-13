@@ -75,31 +75,6 @@ function ProjectCard({ project }) {
           ))}
         </div>
 
-        {project.proof && (
-          <a
-            href={project.proof.image}
-            target="_blank"
-            rel="noreferrer"
-            data-cursor="hover"
-            className="group/proof mt-4 flex items-center gap-3 rounded-xl border border-cyan-neon/20 bg-cyan-neon/[0.03] p-2.5 transition-colors hover:border-cyan-neon/40"
-          >
-            <img
-              src={project.proof.image}
-              alt="Verified in production"
-              loading="lazy"
-              className="h-12 w-16 shrink-0 rounded-md object-cover"
-            />
-            <span>
-              <span className="block font-mono text-[10px] uppercase tracking-wider text-cyan-neon">
-                Verified in production
-              </span>
-              <span className="mt-0.5 block text-[11px] leading-snug text-ink-muted">
-                {project.proof.caption}
-              </span>
-            </span>
-          </a>
-        )}
-
         <div className="mt-6 flex items-center gap-4 border-t border-white/10 pt-4">
           <a
             href={project.live}

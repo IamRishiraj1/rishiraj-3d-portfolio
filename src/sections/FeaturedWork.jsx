@@ -36,13 +36,13 @@ function FlagshipCard({ project, reverse }) {
           target="_blank"
           rel="noreferrer"
           data-cursor="hover"
-          className="group relative block h-64 overflow-hidden border-b border-white/10 lg:h-full lg:border-b-0 lg:border-r"
+          className="group relative block h-64 overflow-hidden border-b border-white/10 bg-void-soft lg:h-full lg:border-b-0 lg:border-r"
         >
           <img
             src={project.image}
             alt={`${project.title} screenshot`}
             loading="lazy"
-            className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+            className="h-full w-full object-contain object-center transition-transform duration-500 group-hover:scale-105"
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-void/70 via-transparent to-transparent" />
         </a>
@@ -124,13 +124,12 @@ function FlagshipCard({ project, reverse }) {
           </div>
 
           <a
-            href={project.caseStudy}
-            target="_blank"
-            rel="noreferrer"
+            href={project.caseStudyPdf}
+            download={`${project.id}-case-study.pdf`}
             data-cursor="hover"
             className="mt-4 flex items-center gap-1.5 font-mono text-xs text-ink-faint transition-colors hover:text-ink"
           >
-            Read Full Case Study <FiArrowRight size={12} />
+            Download Full Case Study <FiArrowRight size={12} />
           </a>
         </div>
       </div>

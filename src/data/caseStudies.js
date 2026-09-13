@@ -25,6 +25,7 @@ export const flagshipProjects = [
     live: 'https://dineflowrestaurantplatform.vercel.app',
     github: 'https://github.com/IamRishiraj1/Dineflow_Restaurant',
     caseStudy: '/case-studies/dineflow.html',
+    caseStudyPdf: '/case-studies/dineflow.pdf',
   },
   {
     id: 'garighor',
@@ -48,5 +49,6 @@ export const flagshipProjects = [
     live: 'https://garighor-motors.vercel.app',
     github: 'https://github.com/IamRishiraj1/-garighor-motors',
     caseStudy: '/case-studies/garighor.html',
+    caseStudyPdf: '/case-studies/garighor.pdf',
   },
 ];
