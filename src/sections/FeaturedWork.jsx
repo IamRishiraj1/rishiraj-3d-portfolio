@@ -1,4 +1,5 @@
-import { FiExternalLink, FiGithub, FiFileText, FiArrowRight } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
+import { FiExternalLink, FiGithub, FiFileText, FiDownload, FiArrowRight } from 'react-icons/fi';
 import Reveal from '../components/Reveal';
 import { flagshipProjects } from '../data/caseStudies';
 
@@ -26,6 +27,8 @@ export default function FeaturedWork() {
 }
 
 function FlagshipCard({ project, reverse }) {
+  const caseStudyRoute = `/case-studies/${project.slug}`;
+
   return (
     <div className="glass-card overflow-hidden">
       <div
@@ -57,7 +60,7 @@ function FlagshipCard({ project, reverse }) {
           </p>
 
           <div className="mt-6 flex flex-wrap gap-2">
-            {project.tech.map((t) => (
+            {project.tech.slice(0, 7).map((t) => (
               <span
                 key={t}
                 className="rounded-full border border-white/10 px-2.5 py-1 font-mono text-[10px] text-ink-muted"
@@ -83,35 +86,37 @@ function FlagshipCard({ project, reverse }) {
               <span className="font-mono text-[11px] uppercase tracking-wider text-cyan-neon">
                 Problem —{' '}
               </span>
-              <span className="text-ink-muted">{project.problem}</span>
+              <span className="text-ink-muted">{project.preview.problem}</span>
             </p>
             <p>
               <span className="font-mono text-[11px] uppercase tracking-wider text-violet-neon">
                 Solution —{' '}
               </span>
-              <span className="text-ink-muted">{project.solution}</span>
+              <span className="text-ink-muted">{project.preview.solution}</span>
             </p>
             <p>
               <span className="font-mono text-[11px] uppercase tracking-wider text-ink">
                 Result —{' '}
               </span>
-              <span className="text-ink-muted">{project.result}</span>
+              <span className="text-ink-muted">{project.preview.result}</span>
             </p>
           </div>
+
+          <Link
+            to={caseStudyRoute}
+            data-cursor="hover"
+            className="mt-3 flex items-center gap-1.5 font-mono text-xs text-cyan-neon transition-colors hover:text-cyan-soft"
+          >
+            Read Full Case Study <FiArrowRight size={12} />
+          </Link>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a href={project.live} target="_blank" rel="noreferrer" data-cursor="hover" className="btn-primary">
               <FiExternalLink size={14} /> Live Demo
             </a>
-            <a
-              href={project.caseStudy}
-              target="_blank"
-              rel="noreferrer"
-              data-cursor="hover"
-              className="btn-outline"
-            >
+            <Link to={caseStudyRoute} data-cursor="hover" className="btn-outline">
               <FiFileText size={14} /> View Case Study
-            </a>
+            </Link>
             <a
               href={project.github}
               target="_blank"
@@ -129,7 +134,7 @@ function FlagshipCard({ project, reverse }) {
             data-cursor="hover"
             className="mt-4 flex items-center gap-1.5 font-mono text-xs text-ink-faint transition-colors hover:text-ink"
           >
-            Download Full Case Study <FiArrowRight size={12} />
+            <FiDownload size={12} /> Download Case Study PDF
           </a>
         </div>
       </div>

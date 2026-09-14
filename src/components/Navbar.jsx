@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMenu, FiX, FiMoon, FiSun, FiDownload } from 'react-icons/fi';
 import { useTheme } from '../hooks/useTheme';
@@ -15,6 +16,9 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const { pathname } = useLocation();
+  const isHome = pathname === '/';
+  const navHref = (href) => (isHome ? href : `/${href}`);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -26,11 +30,11 @@ export default function Navbar() {
     <>
       <header
         className={`fixed top-0 z-50 w-full transition-all duration-500 ${
-          scrolled ? 'border-b border-white/10 bg-void/70 backdrop-blur-xl' : 'bg-transparent'
+          scrolled || !isHome ? 'border-b border-white/10 bg-void/70 backdrop-blur-xl' : 'bg-transparent'
         }`}
       >
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
-          <a href="#home" className="font-display text-lg font-semibold tracking-tight" data-cursor="hover">
+          <a href="/" className="font-display text-lg font-semibold tracking-tight" data-cursor="hover">
             RR<span className="neon-text">.</span>dev
           </a>
 
@@ -38,7 +42,7 @@ export default function Navbar() {
             {LINKS.map((l) => (
               <li key={l.href}>
                 <a
-                  href={l.href}
+                  href={navHref(l.href)}
                   data-cursor="hover"
                   className="font-mono text-xs uppercase tracking-widest text-ink-muted transition-colors hover:text-cyan-neon"
                 >
@@ -60,7 +64,7 @@ export default function Navbar() {
             <a href="/resume.pdf" download data-cursor="hover" className="btn-outline">
               <FiDownload size={14} /> Resume
             </a>
-            <a href="#contact" data-cursor="hover" className="btn-primary">
+            <a href={navHref('#contact')} data-cursor="hover" className="btn-primary">
               Let's Talk
             </a>
           </div>
@@ -96,7 +100,7 @@ export default function Navbar() {
               {LINKS.map((l) => (
                 <li key={l.href}>
                   <a
-                    href={l.href}
+                    href={navHref(l.href)}
                     onClick={() => setOpen(false)}
                     className="font-display text-3xl font-medium text-ink"
                   >

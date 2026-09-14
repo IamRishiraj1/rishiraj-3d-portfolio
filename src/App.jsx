@@ -1,50 +1,39 @@
 import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Loader from './components/Loader';
 import CustomCursor from './components/CustomCursor';
 import StarfieldBackground from './components/StarfieldBackground';
+import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
-import Hero from './sections/Hero';
-import WhatIBuild from './sections/WhatIBuild';
-import FeaturedWork from './sections/FeaturedWork';
-import Projects from './sections/Projects';
-import Capabilities from './sections/Capabilities';
-import Skills from './sections/Skills';
-import HowIWork from './sections/HowIWork';
-import About from './sections/About';
-import Certificates from './sections/Certificates';
-import AvailableForWork from './sections/AvailableForWork';
-import Contact from './sections/Contact';
 import Footer from './sections/Footer';
+import Home from './pages/Home';
+import CaseStudyPage from './pages/CaseStudyPage';
 
 export default function App() {
   const [loading, setLoading] = useState(true);
 
   return (
-    <div className="relative min-h-screen bg-void bg-grid-glow">
-      <Loader onDone={() => setLoading(false)} />
-      <CustomCursor />
-      <StarfieldBackground />
+    <BrowserRouter>
+      <div className="relative min-h-screen bg-void bg-grid-glow">
+        <Loader onDone={() => setLoading(false)} />
+        <CustomCursor />
+        <StarfieldBackground />
+        <ScrollToTop />
 
-      <div
-        className="relative z-10 transition-opacity duration-700"
-        style={{ opacity: loading ? 0 : 1 }}
-      >
-        <Navbar />
-        <main>
-          <Hero />
-          <WhatIBuild />
-          <FeaturedWork />
-          <Projects />
-          <Capabilities />
-          <Skills />
-          <HowIWork />
-          <About />
-          <Certificates />
-          <AvailableForWork />
-          <Contact />
-        </main>
-        <Footer />
+        <div
+          className="relative z-10 transition-opacity duration-700"
+          style={{ opacity: loading ? 0 : 1 }}
+        >
+          <Navbar />
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/case-studies/:slug" element={<CaseStudyPage />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
       </div>
-    </div>
+    </BrowserRouter>
   );
 }
