@@ -1,107 +1,111 @@
-# Rishi Raj Biswas — 3D Portfolio
+# Rishi Raj Biswas — Portfolio
 
-A dark, futuristic 3D developer portfolio built with **React + Vite**, **React Three Fiber**,
-**Framer Motion** and **Tailwind CSS**.
+A dark, futuristic developer portfolio built with **React + Vite**, **Three.js / React Three Fiber**, **Tailwind CSS**, and **Framer Motion** — showcasing full-stack and AI-automation engineering work through real, in-depth case studies rather than a static project list.
 
-## ✨ What's inside
+**Live site:** [rishiraj-3d-portfolio.vercel.app](https://rishiraj-3d-portfolio.vercel.app)
 
-- Cinematic boot-sequence loader
-- Custom neon cursor (desktop)
-- Hero section with a lazy-loaded 3D scene — a floating holographic "dev console"
-  orbited by tech nodes, parallax on mouse move, starfield + bloom postprocessing
-- Full-page canvas starfield background with mouse parallax (lightweight, always-on)
-- About section with animated glass cards
-- Skills section with a 3D fibonacci-sphere orbit of your tech stack + category cards
-- Projects grid (10 of your live projects wired in), hover animations, live/GitHub links
-- Animated vertical experience timeline
-- Certificates section linking directly to your 4 uploaded certificate PDFs
-  (already copied into `public/certificates/`)
-- Contact form wired for EmailJS, with a working `mailto:` fallback if you skip setup
-- Dark/light theme toggle, resume download button, responsive nav with mobile drawer
-- Fully responsive, SEO meta tags, `robots.txt`
+---
 
-## 🚀 Getting started
+## About
+
+This is my personal developer portfolio, and also a working example of the kind of application I build for clients: a production React app with real routing, a 3D interactive hero, a light/dark theme system, a working contact pipeline, and native in-app case study pages instead of a PDF bolted onto a template.
+
+I'm a **Full-Stack Developer building AI-powered business applications** — React/TypeScript on the frontend, Node.js/Python and PostgreSQL on the backend, with LLM APIs (Gemini, Groq) wired into real workflows like lead capture and task automation rather than just a chat widget. This portfolio is built to prove that directly: the two flagship projects featured here, **DineFlow** and **GariGhor Motors**, each have a full native case-study page covering the actual problem, architecture, engineering decisions, bugs found and fixed, and security measures — not just a screenshot and a one-line description.
+
+I'm based in Chattogram, Bangladesh, and currently taking on freelance and full-time work as a full-stack / AI automation developer.
+
+## Features
+
+- 🪐 **Interactive 3D hero** — a floating holographic "dev console" scene built with React Three Fiber, orbiting tech nodes, mouse parallax, and bloom post-processing, lazy-loaded and auto-downgraded on mobile
+- 📄 **Native case study pages** — `/case-studies/dineflow` and `/case-studies/garighor` are real in-app routes (React Router), not static HTML or a PDF viewer, covering architecture, key engineering decisions, real bugs found & fixed, and security checklists
+- 🎯 **Flagship + supporting project structure** — DineFlow and GariGhor get full rich cards with live metrics; other projects (Do-ers, and more) sit in a secondary grid so they don't compete for attention
+- 🌗 **Light/dark theme toggle** — a complete theme system, not just an inverted background
+- ✉️ **Working contact form** — EmailJS-powered, with a `mailto:` fallback if it isn't configured
+- 🧠 **3D skills orbit** — tech stack rendered as an orbiting fibonacci-sphere of labels
+- ⚡ **Performance-conscious** — heavy 3D dependencies are code-split and lazy-loaded via `React.lazy`/`Suspense` so they never block first paint
+- 📱 Fully responsive, with a custom cursor and canvas starfield background on desktop
+
+## Tech Stack
+
+| Layer | Tools |
+|---|---|
+| Framework | React 18, Vite |
+| Routing | React Router v6 |
+| 3D | Three.js, @react-three/fiber, @react-three/drei, @react-three/postprocessing |
+| Styling | Tailwind CSS (custom design tokens: neon cyan/violet on a near-black base) |
+| Animation | Framer Motion, GSAP-style scroll reveals |
+| Forms | EmailJS |
+| Icons | react-icons |
+| Deployment | Vercel |
+
+## Project Structure
+
+```
+portfolio/
+├── public/
+│   ├── case-studies/          # Downloadable case-study PDFs
+│   ├── images/
+│   │   ├── projects/          # Project screenshots
+│   │   └── case-studies/      # Curated case-study screenshots (by project)
+│   └── resume.pdf
+├── src/
+│   ├── components/            # Navbar, Loader, CustomCursor, StarfieldBackground, Reveal, ScrollToTop
+│   ├── sections/               # Hero, WhatIBuild, FeaturedWork, Projects, Capabilities,
+│   │                           # Skills, HowIWork, About, Certificates, Contact, Footer
+│   ├── pages/                  # Home.jsx, CaseStudyPage.jsx (routed pages)
+│   ├── models/                  # HeroScene.jsx, SkillsOrbit.jsx (React Three Fiber)
+│   ├── data/                    # projects.js, caseStudies.js, skills.js, capabilities.js, etc.
+│   ├── hooks/                   # useTheme.js
+│   ├── App.jsx                  # BrowserRouter + route definitions
+│   └── main.jsx
+├── vercel.json                  # SPA rewrite so /case-studies/* work on direct load
+└── package.json
+```
+
+## Getting Started
 
 ```bash
 npm install
 npm run dev
 ```
 
-Then open the printed local URL (usually `http://localhost:5173`).
-
-Build for production:
+Open the printed local URL (usually `http://localhost:5173`).
 
 ```bash
 npm run build
 npm run preview
 ```
 
-## 🔧 Things to customize
+### Configuration
 
-1. **Resume** — drop your PDF at `public/resume.pdf` (the "Download Resume" buttons
-   already point there).
-2. **EmailJS (contact form)** — create a free account at https://www.emailjs.com,
-   set up an email service + template, then open `src/sections/Contact.jsx` and
-   replace:
-   ```js
-   const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
-   const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
-   const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
-   ```
-   Until you do, the form still works — it opens the visitor's email client with a
-   pre-filled message to `rjrishiraj3@gmail.com`.
-3. **Certificates** — already wired to the 4 PDFs you uploaded, copied into
-   `public/certificates/`. Add more by editing `src/data/certificates.js`.
-4. **Colors / fonts** — edit the design tokens in `tailwind.config.js`
-   (`cyan.neon`, `violet.neon`, `void`, `font.display`, `font.mono`, etc).
-5. **og-cover image** — add a `public/og-cover.jpg` (1200×630) and re-add the
-   `<meta property="og:image">` tag in `index.html` if you want a social share preview.
+- **Resume**: drop your PDF at `public/resume.pdf`
+- **Contact form**: add your EmailJS Service ID, Template ID, and Public Key in `src/sections/Contact.jsx` (falls back to a `mailto:` link if left unconfigured)
+- **Content**: project data, skills, and case-study content all live in `src/data/` as plain JS objects — no CMS needed
 
-## 📦 Deploying
+## Case Studies
 
-This is a static Vite build — deploy the `dist/` folder to **Vercel**, **Netlify**,
-**GitHub Pages**, or any static host.
+Unlike a typical portfolio project list, the two flagship projects here each get a dedicated page under `/case-studies/<slug>` covering:
 
-- **Vercel**: `vercel` (framework auto-detected)
-- **Netlify**: build command `npm run build`, publish directory `dist`
+- The problem, goal, and solution
+- System architecture and data flow
+- Key engineering decisions and trade-offs
+- Real challenges found during development/QA and how they were fixed
+- Security and reliability measures
+- A product walkthrough with real screenshots
+- Current project status
 
-## ⚡ Performance notes
+The full write-ups are also available as downloadable PDFs from each case study page.
 
-- The heavy 3D hero scene and skills orbit are both **lazy-loaded** (`React.lazy` +
-  `Suspense`) so they don't block first paint.
-- Hero scene automatically drops resolution/particle count and disables
-  postprocessing on small screens / touch devices (see `quality` prop in
-  `Hero.jsx` → `HeroScene.jsx`).
-- The full-page starfield uses plain Canvas 2D (not WebGL) so it's cheap to keep
-  running behind every section.
+## Deployment
 
-## 📁 Folder structure
+Deployed on [Vercel](https://vercel.com) with zero-config Vite detection. `vercel.json` includes a catch-all rewrite so client-side routes (`/case-studies/*`) resolve correctly on direct navigation and refresh.
 
-```
-portfolio/
-├── public/
-│   ├── certificates/       ← your 4 certificate PDFs
-│   ├── favicon.svg
-│   ├── robots.txt
-│   └── resume.pdf          ← add this yourself
-├── src/
-│   ├── components/         Navbar, Loader, CustomCursor, StarfieldBackground, Reveal
-│   ├── sections/           Hero, About, Skills, Projects, Experience, Certificates, Contact, Footer
-│   ├── models/              HeroScene.jsx, SkillsOrbit.jsx (R3F)
-│   ├── data/                projects.js, skills.js, certificates.js, experience.js
-│   ├── hooks/                useTheme.js
-│   ├── styles/index.css
-│   ├── App.jsx
-│   └── main.jsx
-├── index.html
-├── tailwind.config.js
-├── vite.config.js
-└── package.json
-```
+## Contact
 
-## 🧩 Suggested next additions (not built in yet)
+- **Email**: rjrishiraj3@gmail.com
+- **GitHub**: [@IamRishiraj1](https://github.com/IamRishiraj1)
+- **LinkedIn**: [linkedin.com/in/iamrishiraj01](https://www.linkedin.com/in/iamrishiraj01)
 
-- Multi-language toggle (i18n)
-- AI chatbot assistant widget
-- Visitor analytics (e.g. Plausible or Vercel Analytics — one script tag)
-- Background music toggle
+---
+
+© Rishi Raj Biswas. Built with React, Three.js, and a lot of coffee.
