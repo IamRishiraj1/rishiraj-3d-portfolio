@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://rishiraj-3d-portfolio.vercel.app/sitemap.xml
