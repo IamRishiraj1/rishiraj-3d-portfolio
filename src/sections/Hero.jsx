@@ -17,7 +17,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="home" className="relative flex min-h-screen items-center overflow-hidden">
+    <section id="home" className="relative flex min-h-screen items-start overflow-hidden pt-20 lg:items-center lg:pt-0">
       <div className="absolute inset-x-0 top-0 h-screen lg:inset-0 lg:h-full">
         {ready && (
           <Suspense fallback={null}>
