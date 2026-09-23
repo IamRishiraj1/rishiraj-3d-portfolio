@@ -18,7 +18,7 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative flex min-h-screen items-center overflow-hidden">
-      <div className="absolute inset-0">
+      <div className="absolute inset-x-0 top-0 h-screen lg:inset-0 lg:h-full">
         {ready && (
           <Suspense fallback={null}>
             <HeroScene quality={quality} />
@@ -83,13 +83,37 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="relative mx-auto hidden w-full max-w-[360px] lg:block"
+          className="relative mx-auto block w-full max-w-[240px] sm:max-w-[300px] lg:max-w-[360px]"
         >
           {/* Ambient glow behind the portrait */}
-          <div className="absolute left-1/2 top-1/2 -z-10 h-[440px] w-[440px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-violet-neon/40 via-cyan-neon/25 to-transparent blur-3xl" />
-          <div className="absolute left-1/2 top-1/2 -z-10 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-neon/25 blur-2xl" />
-          <div className="absolute left-1/2 top-1/2 -z-10 h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
-          <div className="absolute left-1/2 top-1/2 -z-10 h-[440px] w-[440px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-white/10" />
+          <div className="absolute left-1/2 top-1/2 -z-10 h-[280px] w-[280px] -translate-x-1/2 -translate-y-1/2 sm:h-[360px] sm:w-[360px] lg:h-[440px] lg:w-[440px]">
+            <motion.div
+              animate={{ scale: [1, 1.18, 1], opacity: [0.65, 1, 0.65] }}
+              transition={{ repeat: Infinity, duration: 4.5, ease: 'easeInOut' }}
+              className="h-full w-full rounded-full bg-gradient-to-br from-violet-neon/40 via-cyan-neon/25 to-transparent blur-3xl"
+            />
+          </div>
+          <div className="absolute left-1/2 top-1/2 -z-10 h-[190px] w-[190px] -translate-x-1/2 -translate-y-1/2 sm:h-[240px] sm:w-[240px] lg:h-[300px] lg:w-[300px]">
+            <motion.div
+              animate={{ scale: [1.1, 0.95, 1.1], opacity: [0.5, 0.85, 0.5] }}
+              transition={{ repeat: Infinity, duration: 3.6, ease: 'easeInOut', delay: 0.4 }}
+              className="h-full w-full rounded-full bg-violet-neon/25 blur-2xl"
+            />
+          </div>
+          <div className="absolute left-1/2 top-1/2 -z-10 h-[230px] w-[230px] -translate-x-1/2 -translate-y-1/2 sm:h-[290px] sm:w-[290px] lg:h-[360px] lg:w-[360px]">
+            <motion.div
+              animate={{ rotate: -360 }}
+              transition={{ repeat: Infinity, duration: 26, ease: 'linear' }}
+              className="h-full w-full rounded-full border border-white/10"
+            />
+          </div>
+          <div className="absolute left-1/2 top-1/2 -z-10 h-[280px] w-[280px] -translate-x-1/2 -translate-y-1/2 sm:h-[360px] sm:w-[360px] lg:h-[440px] lg:w-[440px]">
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ repeat: Infinity, duration: 18, ease: 'linear' }}
+              className="h-full w-full rounded-full border border-dashed border-cyan-neon/20"
+            />
+          </div>
 
           {/* Floating group: portrait + chips drift together */}
           <motion.div
@@ -100,32 +124,32 @@ export default function Hero() {
             <div
               className="relative overflow-hidden rounded-[2rem]"
               style={{
-                maskImage: 'radial-gradient(ellipse 100% 105% at 50% 30%, black 45%, transparent 92%)',
+                maskImage: 'radial-gradient(ellipse 82% 76% at 50% 26%, black 28%, transparent 88%)',
                 WebkitMaskImage:
-                  'radial-gradient(ellipse 100% 105% at 50% 30%, black 45%, transparent 92%)',
+                  'radial-gradient(ellipse 82% 76% at 50% 26%, black 28%, transparent 88%)',
               }}
             >
               <img
                 src="/images/rishi-hero.png"
                 alt="Rishi Raj Biswas"
-                className="h-[440px] w-full object-cover"
+                className="h-[280px] w-full object-cover sm:h-[360px] lg:h-[440px]"
               />
             </div>
 
             {/* Overlapping status cards */}
-            <div className="absolute -left-6 top-10 flex items-center gap-2 rounded-lg border border-white/10 bg-void/90 px-3.5 py-2.5 shadow-glass backdrop-blur-md">
+            <div className="absolute -left-9 top-4 flex items-center gap-1 rounded-full border border-white/10 bg-void/95 px-2 py-1 backdrop-blur-md sm:-left-4 sm:top-8 sm:gap-2 sm:bg-white/[0.04] sm:px-3 sm:py-2 lg:-left-6 lg:top-10 lg:px-3.5 lg:py-2.5">
               <span className="h-1.5 w-1.5 rounded-full bg-cyan-neon" />
-              <p className="font-mono text-xs text-ink">workflow.trigger()</p>
+              <p className="font-mono text-[9px] text-ink sm:text-[11px] lg:text-xs">workflow.trigger()</p>
             </div>
 
-            <div className="absolute -right-6 top-1/2 flex -translate-y-1/2 items-center gap-2 rounded-lg border border-white/10 bg-void/90 px-3.5 py-2.5 shadow-glass backdrop-blur-md">
+            <div className="absolute -right-9 top-1/2 flex -translate-y-1/2 items-center gap-1 rounded-full border border-white/10 bg-void/95 px-2 py-1 backdrop-blur-md sm:-right-4 sm:gap-2 sm:bg-white/[0.04] sm:px-3 sm:py-2 lg:-right-6 lg:px-3.5 lg:py-2.5">
               <span className="h-1.5 w-1.5 rounded-full bg-cyan-neon" />
-              <p className="font-mono text-xs text-ink">AI: lead qualified</p>
+              <p className="font-mono text-[9px] text-ink sm:text-[11px] lg:text-xs">AI: lead qualified</p>
             </div>
 
-            <div className="absolute -left-6 bottom-10 flex items-center gap-2 rounded-lg border border-white/10 bg-void/90 px-3.5 py-2.5 shadow-glass backdrop-blur-md">
+            <div className="absolute -left-9 bottom-4 flex items-center gap-1 rounded-full border border-white/10 bg-void/95 px-2 py-1 backdrop-blur-md sm:-left-4 sm:bottom-8 sm:gap-2 sm:bg-white/[0.04] sm:px-3 sm:py-2 lg:-left-6 lg:bottom-10 lg:px-3.5 lg:py-2.5">
               <span className="h-1.5 w-1.5 rounded-full bg-cyan-neon" />
-              <p className="font-mono text-xs text-ink">API connected</p>
+              <p className="font-mono text-[9px] text-ink sm:text-[11px] lg:text-xs">API connected</p>
             </div>
           </motion.div>
 
@@ -133,7 +157,7 @@ export default function Hero() {
           <motion.div
             animate={{ scaleX: [1, 0.82, 1], opacity: [0.4, 0.18, 0.4] }}
             transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut' }}
-            className="absolute -bottom-4 left-1/2 -z-10 h-6 w-44 -translate-x-1/2 rounded-full bg-black/60 blur-xl"
+            className="absolute -bottom-4 left-1/2 -z-10 h-5 w-32 -translate-x-1/2 rounded-full bg-black/60 blur-xl sm:h-6 sm:w-40 lg:w-44"
           />
         </motion.div>
       </div>
