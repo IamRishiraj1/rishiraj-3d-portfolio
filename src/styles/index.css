@@ -113,6 +113,9 @@ html.light .bg-void\/70 {
 html.light .bg-void\/98 {
   background-color: rgba(244, 245, 251, 0.98);
 }
+html.light .bg-void\/95 {
+  background-color: rgba(244, 245, 251, 0.95);
+}
 html.light .glass-card {
   background: rgba(10, 10, 22, 0.035);
   border-color: rgba(10, 10, 22, 0.1);
@@ -134,11 +137,26 @@ html.light .via-void\/20 {
 html.light .via-void\/75 {
   --tw-gradient-via: rgba(244, 245, 251, 0.85);
 }
+html.light .via-void\/10 {
+  --tw-gradient-via: rgba(244, 245, 251, 0.1);
+}
 html.light .via-void\/60 {
   --tw-gradient-via: rgba(244, 245, 251, 0.7);
 }
 html.light .to-void {
   --tw-gradient-to: #F4F5FB var(--tw-gradient-to-position);
+}
+html.light .from-void\/40 {
+  --tw-gradient-from: rgba(244, 245, 251, 0.4) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(244 245 251 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+@media (min-width: 1024px) {
+  html.light .lg\:from-void\/55 {
+    --tw-gradient-from: rgba(244, 245, 251, 0.55) var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(244 245 251 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  }
 }
 
 /* Text */
@@ -184,6 +202,9 @@ html.light .bg-white\/\[0\.02\] {
 }
 html.light .bg-white\/\[0\.03\] {
   background-color: rgba(10, 10, 22, 0.035);
+}
+html.light .bg-white\/\[0\.04\] {
+  background-color: rgba(10, 10, 22, 0.045);
 }
 
 /* Scrollbar track */
