@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiMenu, FiX, FiMoon, FiSun, FiDownload } from 'react-icons/fi';
+import { FiMenu, FiX, FiMoon, FiSun, FiDownload, FiCreditCard } from 'react-icons/fi';
 import { useTheme } from '../hooks/useTheme';
 
 const LINKS = [
@@ -61,6 +61,16 @@ export default function Navbar() {
             >
               {theme === 'dark' ? <FiSun size={15} /> : <FiMoon size={15} />}
             </button>
+            <a
+              href="/visiting-card.html"
+              target="_blank"
+              rel="noopener"
+              data-cursor="hover"
+              aria-label="View digital business card"
+              className="rounded-full border border-white/10 p-2.5 text-ink-muted transition-colors hover:border-cyan-neon/50 hover:text-cyan-neon"
+            >
+              <FiCreditCard size={15} />
+            </a>
             <a href="/resume.pdf" download data-cursor="hover" className="btn-outline">
               <FiDownload size={14} /> Resume
             </a>
@@ -116,6 +126,15 @@ export default function Navbar() {
               >
                 {theme === 'dark' ? <FiSun size={16} /> : <FiMoon size={16} />}
               </button>
+              <a
+                href="/visiting-card.html"
+                target="_blank"
+                rel="noopener"
+                className="rounded-full border border-white/10 p-3 text-ink-muted"
+                aria-label="View digital business card"
+              >
+                <FiCreditCard size={16} />
+              </a>
               <a href="/resume.pdf" download className="btn-outline flex-1 justify-center">
                 <FiDownload size={14} /> Resume
               </a>
